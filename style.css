@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body {
+    background: pink;
+}
+.blahaj{
+    height: 120px;
+    width: 120px;
+    /* border: 6px solid white;
+    border-color: white transparent white transparent;
+    border-radius: 50%; */
+    animation: spin 8s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 300px;
+    right: 0;
+  }
+  @keyframes spin {
+    0% {left: 0px; }
+    50% {left: 1000px; rotate: 180deg;}
+    100% {left: 0px; rotate: 360deg;}
+  }
+
+.card{
+    width: 640px;
+    height: 460px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+}
+.card:hover{
+    transform: rotate(-5deg);
+}
+.card:hover .outside{
+    transform: rotateY(-130deg);
+}
+.outside,.inside{
+    border: 1px solid white;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+}
+.img img{
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.inside{
+    left: 50%;
+    background: linear-gradient(
+        to right,
+        #e0e0e0 , #fff 30%
+    );
+    line-height: 1.2;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #994c10;
+}
+.outside{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    font-family: 'Indie Flower', cursive;
+}
+.front,.back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    background-color: #fff;
+}
+.front{
+    background-color: #fff;
+    letter-spacing: 5px;
+    font-size: 26px;
+    padding-top: 10px;
+    text-align: center;
+}
+.back{
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e0e0e0, #fff 30% );
+}
+.cake{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.top-layer{
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(
+        transparent 50px,
+        #fedbab 50px,
+        #fedbab 60px,
+        transparent 60px,
+    ),
+    radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+}
